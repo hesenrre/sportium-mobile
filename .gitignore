@@ -2,3 +2,7 @@ tmp
 *.class
 *.pyc
 *.pyo
+*#
+*~
+#*
+.monitor
