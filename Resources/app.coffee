@@ -4,6 +4,8 @@ K.initBackbone()
 
 Ti.App.win = null
 
+develop = true
+
 Ti.App.useWin = (type, title, prev = Ti.App.win, options = new Object())->
   nav = null
   if prev
@@ -26,12 +28,14 @@ Ti.App.useWin = (type, title, prev = Ti.App.win, options = new Object())->
     win.open transition: Titanium.UI.iPhone && Titanium.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT
   
 main = ->
-
-  Ti.Facebook.requestWithGraphPath('me', {}, 'GET', (e) ->
+  if develop
+    Ti.App.useWin('main', 'Sportium')
+  else
+    Ti.Facebook.requestWithGraphPath('me', {}, 'GET', (e) ->
       if e.success
         Ti.App.facebookdata = JSON.parse(e.result);
         Ti.App.useWin('main', 'Sportium')      
-    );
+    )
   
 
 login = ->
@@ -66,7 +70,7 @@ Ti.Facebook.addEventListener 'login', (event)->
 Ti.Facebook.addEventListener 'logout', (event)-> login()
 
 run = ->
-  if Ti.Facebook.loggedIn
+  if develop || Ti.Facebook.loggedIn
     main()
   else
     login()
