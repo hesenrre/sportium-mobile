@@ -2,17 +2,22 @@ Ti.include '/kranium/lib/kranium.js'
 
 K.initBackbone()
 
-win = null
+Ti.App.win = null
 
 main = ->
+  win = Ti.App.win
   win.close() if win
-  win = K.createWindow()
+  win = Ti.App.win = K.createWindow({
+    fullscreen: true
+  })
   $({type: 'main'}).appendTo win
   win.open()
 
 login = ->
+  win = Ti.App.win
   win.close() if win
-  win = K.createWindow({
+  win = Ti.App.win = K.createWindow({
+    fullscreen: true,
     children: [
       {
         type: 'button',

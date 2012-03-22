@@ -1,0 +1,27 @@
+.codigoqr{
+	background-color: #FFF;
+	width:100%;
+	height:100%;
+}
+
+.qrcodeNombre{
+	top: 20;
+	height: auto;
+	width: 100%;
+	textAlign:center;	
+}
+
+.qrcodeSocio{
+	bottom: 20;
+	height: auto;
+	width: 100%;
+	textAlign:center;	
+}
+
+.qrcodeImage{
+    image:image/sportiumChart.png;
+    width: 300px;
+    height: 300px;	
+    
+}
+	
