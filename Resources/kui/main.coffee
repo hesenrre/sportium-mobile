@@ -14,9 +14,9 @@ exports.Class = View.extend
       }
       {
         type: 'button'
-        className: 'profileButton'
+        className: 'rutinaButton'
         events:{
-          click:(event)->Ti.App.useWin('profile', 'Perfil') 
+          click:(event)->Ti.App.useWin('rutina', 'Perfil') 
         } 
       }
       {
@@ -26,6 +26,26 @@ exports.Class = View.extend
           click:(event)->Ti.App.useWin('events', 'Calendario') 
         } 
       }
-     
+      {
+        type: 'button'
+        className: 'sucursalesButton'
+        events:{
+          click:(event)->Ti.App.useWin('sucursales', 'Perfil') 
+        } 
+      }
+      {
+        type: 'button'
+        className: 'profileButton'
+        events:{
+          click:(event)->Ti.App.useWin('profile', 'Calendario') 
+        } 
+      }
+      {
+        type: 'button'
+        className: 'feedbackButton'
+        events:{
+          click:(event)->Ti.App.useWin('feedback', 'Calendario') 
+        } 
+      }
     ]
     @_super.apply(@, arguments) 
