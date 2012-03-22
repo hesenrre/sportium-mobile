@@ -6,6 +6,7 @@ childs =  [
 ]
 
 exports.Class = View.extend
-  init: ->
+  init: (opts)->
+    Ti.API.info opts
     @children = childs
     @_super.apply(@, arguments)    
