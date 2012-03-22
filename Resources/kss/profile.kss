@@ -57,7 +57,8 @@ profile{
 	height: 50;
 	width: 80%;
 	borderRadius: 10;
-	backgroundColor: #000;
+	backgroundColor: #e5e7e7;
+	borderColor: #aaa;
 }
 .achive{
 	top: 210;
@@ -69,5 +70,18 @@ profile{
 	height: 50;
 	width: 80%;
 	borderRadius: 10;
-	backgroundColor: #fff;
+	backgroundColor: #e5e7e7;
+	borderColor: #aaa;
+}
+.icon{
+	left: 10;
+	top: 10;
+	height: auto;
+	width: 40;
+}
+.badge{
+	left: 10;
+	bottom: 5;
+	height: auto;
+	width: 40;
 }

@@ -10,6 +10,54 @@ exports.Class = View.extend
       K.createImageView({
         image: "image/logo_530.png",
         className: "logo"
+      }),
+      K.createView({
+        layout: "horizontal",
+        className: "vtastes",
+        children: [
+          K.createImageView({
+            image: "image/activities/pesas.png"
+            className: "icon"
+          }),
+          K.createImageView({
+            image: "image/activities/bici.png"
+            className: "icon"
+          }),
+          K.createImageView({
+            image: "image/activities/abdominales.png"
+            className: "icon"
+          }),
+          K.createImageView({
+            image: "image/activities/caminadora.png"
+            className: "icon"
+          })
+        ]
+      }),
+      K.createView({
+        layout: "horizontal",
+        className: "vachive",
+        children: [
+          K.createImageView({
+            image: "image/badges/pesas10.png"
+            className: "badge"
+          }),
+          K.createImageView({
+            image: "image/badges/7.png"
+            className: "badge"
+          }),
+          K.createImageView({
+            image: "image/badges/timer.png"
+            className: "badge"
+          }),
+          K.createImageView({
+            image: "image/badges/15.png"
+            className: "badge"
+          }),
+          K.createImageView({
+            image: "image/badges/timerx2.png"
+            className: "badge"
+          })
+        ]
       })
     ]
     
