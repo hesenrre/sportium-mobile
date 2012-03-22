@@ -59,6 +59,8 @@
 .maquina{
 	top: 5;
 	left: 10;
+	width: 25;
+	height: 25;
 }
 
 .desc{
@@ -71,4 +73,6 @@
 .paloma{
 	top: 5;
 	right: 10;
+	width: 25;
+	height: 25;
 }
