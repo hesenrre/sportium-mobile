@@ -4,7 +4,7 @@ K.initBackbone()
 
 Ti.App.win = null
 
-Ti.App.useWin = (type, title, prev = Ti.App.win)->
+Ti.App.useWin = (type, title, prev = Ti.App.win, options = new Object())->
   nav = null
   if prev
     navwin = K.createWindow()
@@ -17,7 +17,8 @@ Ti.App.useWin = (type, title, prev = Ti.App.win)->
     title: title
   })
   win = Ti.App.win
-  $({type: type}).appendTo win
+  options.type = type
+  $(options).appendTo win
   
   if nav
     nav.open win, animated: true
