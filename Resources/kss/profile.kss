@@ -1,6 +1,12 @@
 profile{
 	backgroundImage: image/idcard.jpg;
 }
+.logout{
+	height: 20;
+	width:60;
+	top: 5;
+	right: 5;
+}
 
 .logo{
 	top: 45;
