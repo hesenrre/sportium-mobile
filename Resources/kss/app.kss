@@ -1,0 +1,9 @@
+window {
+	background-color:red;
+}
+
+.rutina{
+	background-color: #FFF;
+	widt:200px;
+	height:100px;
+}
