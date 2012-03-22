@@ -11,3 +11,4 @@ build/
 app.js
 **/kui/*.js
 *.sw*
+Resources/kranium/kranium-generated-bootstrap.js
