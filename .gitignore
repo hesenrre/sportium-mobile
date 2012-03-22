@@ -8,3 +8,4 @@ tmp
 .monitor
 build/
 .DS_Store
+app.js
