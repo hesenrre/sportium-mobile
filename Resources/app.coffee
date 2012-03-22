@@ -4,10 +4,13 @@ K.initBackbone()
 
 Ti.App.win = null
 
-Ti.App.useWin = (type, title)->
+Ti.App.useWin = (type, title, prev = Ti.App.win)->
   nav = null
-  if Ti.App.win
-    nav = Ti.UI.iPhone.createNavigationGroup window: Ti.App.win
+  if prev
+    navwin = K.createWindow()
+    nav = Ti.UI.iPhone.createNavigationGroup window: prev
+    navwin.add nav
+    navwin.open()
   
   Ti.App.win = K.createWindow({
     fullscreen: true
@@ -17,9 +20,9 @@ Ti.App.useWin = (type, title)->
   $({type: type}).appendTo win
   
   if nav
-    nav.open win, {animated: true, transition: Titanium.UI.iPhone && Titanium.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT}
-  else
-    win.open {transition: Titanium.UI.iPhone && Titanium.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT}
+    nav.open win, animated: true
+  else 
+    win.open transition: Titanium.UI.iPhone && Titanium.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT
   
 main = ->
 
