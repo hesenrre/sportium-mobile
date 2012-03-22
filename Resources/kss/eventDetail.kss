@@ -1,0 +1,53 @@
+.eventDetail{
+	background-color: #FFF;
+	width:100%;
+	height:100%;
+}
+.eventDetailTitle{
+	top:10px;
+	width:auto;
+	height:auto;
+	text-align:center;
+}
+
+.eventDetailDesc{
+	top:200px;
+	width:auto;
+	height:auto;
+	text-align:center;
+}
+.abdominales{
+	image: image/activities/abdominales.png;
+	width: 50px;
+	height: 50px;
+	top: 100px;
+	left:130;
+}
+.bici{
+	image: image/activities/bici.png;
+	width: 50px;
+	height: 50px;
+	top: 100px;
+	left:130;
+}
+
+.caminadora{
+	image: image/activities/caminadora.png;
+	width: 50px;
+	height: 50px;
+	top: 100px;
+	left:130;
+}
+
+.pesas{
+	image: image/activities/pesas.png;
+	width: 50px;
+	height: 50px;
+	top: 100px;
+	left:130;
+}
+.eventDetailButton{
+	width: 100px;
+	height: 20px;
+	bottom:50px;
+}
