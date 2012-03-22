@@ -1,0 +1,10 @@
+view
+  button.prev <
+  button.next >
+  label.month= month 
+  buttonbar.dayn(labels = dayn)
+  - days.forEach(function(ds, i){ 
+    buttonbar.days(labels = ds, top = 50 + (24 * i), row = i)  
+  - })
+  scrollview(top = 50 + (24 * days.length))
+    tableview.list

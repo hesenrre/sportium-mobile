@@ -1,0 +1,59 @@
+view {
+  background-color: #ffffff;
+}
+
+.month {
+  top: 0;
+  left: 140;
+  width: auto;
+  height: auto;
+}
+
+.prev {
+  top: 0;
+  left: 0;
+  width: 10;
+  height: 10;
+
+}
+
+.next {
+  top: 0;
+  right: 0;
+  width: 10;
+  height: 10;
+}
+
+.dayn {
+  top: 25;
+  height: 25;
+}
+
+.days {
+  style: Ti.UI.iPhone.SystemButtonStyle.BAR;
+  height: 25;
+}
+
+.marked {
+  background-color: orange;
+}
+
+.list {
+  height: 100%
+}
+
+.abdominales {
+  background-color: #cfe2f3;
+}
+
+.bici {
+  background-color: #d9ead3;
+}
+
+.caminadora {
+  background-color: #fce5cd;
+}
+
+.pesas {
+  background-color: #fff2cc;
+}
