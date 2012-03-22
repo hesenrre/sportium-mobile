@@ -8,22 +8,52 @@
     image: image/PALOMA.png;
     width: 24px;
     height: 24px;
-    background-color: green; 
+    borderWidth: 2;
+    borderRound: 2; 
 }
 
-.piernaMaquina {
-    image: image/PALOMA.png;
+.abdominalesMaquina {
+    image: image/activities/abdominales.png;
     width: 24px;
     height: 24px;
-    background-color: red;
 }
 
-.cardioRutina {
-  background-color: yellow;
+.biciMaquina {
+    image: image/activities/bici.png;
+    width: 24px;
+    height: 24px;
 }
 
-.piernaRutina {
-  background-color: blue;
+.caminadoraMaquina {
+    image: image/activities/caminadora.png;
+    width: 24px;
+    height: 24px;
+}
+
+.pesasMaquina {
+    image: image/activities/pesas.png;
+    width: 24px;
+    height: 24px;
+}
+
+.abdominalesRutina {
+  background-color: #cfe2f3;
+}
+
+.biciRutina {
+  background-color: #d9ead3;
+}
+
+.caminadoraRutina {
+  background-color: #fce5cd;
+}
+
+.pesasRutina {
+  background-color: #fff2cc;
+}
+
+.gray {
+  background-color: #cccccc;
 }
 
 .maquina{

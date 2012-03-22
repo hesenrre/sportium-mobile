@@ -1,25 +1,46 @@
 backendResponse = {
   todo: [
     {
-      type:'cardio'
+      type:'caminadora'
       desc:'20 minutos caminadora nivel 8'
-      done: true
+      done: false
+    }
+    {
+      type:'bici'
+      desc:'15 minutos bicicleta'
+      done: false
+    }
+    {
+      type:'abdominales'
+      desc:'serie 4/20 abdominales'
+      done: false
     }
     {
       type:'pesas'
-      desc:'repite 4/15 con 7kg'
+      desc:'serie 4/15 con pesas 7.0kg'
       done: false
     }
     {
-      type:'pierna'
-      desc:'serie 4/10 con 2.5kg en extension'
+      type:'caminadora'
+      desc:'20 minutos caminadora nivel 8'
       done: false
     }
     {
-      type:'espalda'
-      desc:'serie 4/10 con 4.0kg en maquina'
+      type:'bici'
+      desc:'15 minutos bicicleta'
       done: false
     }
+    {
+      type:'abdominales'
+      desc:'serie 4/20 abdominales'
+      done: false
+    }
+    {
+      type:'pesas'
+      desc:'serie 4/15 con pesas 7.0kg'
+      done: false
+    }
+  
   ]  
 }
 
@@ -27,20 +48,21 @@ backendResponse = {
 views = backendResponse.todo.map (todo)->
   tvr = K.createTableViewRow()
   rutina = J('rutina.jade', {  todo: todo })
-  
-  if todo.done
-    rutina.find('.paloma').addClass 'palomeado'
+ 
+  rutina.todo = todo
   rutina.addClass todo.type + 'Rutina'
   rutina.find('.maquina').addClass todo.type + 'Maquina'
   
   moveDown = (event)->
-    ary = (v for v in views when v != tvr) 
-    ary.push tvr
-    $('.rutinaTable').get(0).setData ary
-  
+    rutina.find('.paloma').addClass 'palomeado'
+    rutina.removeClass todo.type + 'Rutina'
+    rutina.addClass 'gray'
+ 
+    $('.rutinaTable').get(0).deleteRow(tvr)
+    $('.rutinaTable').get(0).appendRow(tvr)
+    
   
   rutina.find('.paloma').bind('click', moveDown)
-  rutina.bind('slide', moveDown) 
   rutina.appendTo tvr
   tvr
 
