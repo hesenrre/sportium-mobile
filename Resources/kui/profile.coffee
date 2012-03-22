@@ -1,10 +1,9 @@
 exports.Class = View.extend
   init: ->
-    
     @children = [
       K.jade("profile.jade", 
       {
-        name: "Victor Hugo Borja Rodriguez",
+        name: Ti.App.facebookdata.name,
         enddate: "20/03/2012"
       }),
       K.createImageView({

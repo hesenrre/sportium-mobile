@@ -5,13 +5,21 @@ K.initBackbone()
 Ti.App.win = null
 
 main = ->
-  win = Ti.App.win
-  win.close() if win
-  win = Ti.App.win = K.createWindow({
-    fullscreen: true
-  })
-  $({type: 'main'}).appendTo win
-  win.open()
+
+  Ti.Facebook.requestWithGraphPath('me', {}, 'GET', (e) ->
+      if e.success
+        Ti.App.facebookdata = JSON.parse(e.result);
+        win = Ti.App.win
+        win.close() if win
+        win = Ti.App.win = K.createWindow({
+          fullscreen: true
+        })
+        $({type: 'profile'}).appendTo win
+        win.open({
+          transition: Titanium.UI.iPhone && Titanium.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT
+        })    
+    );
+  
 
 login = ->
   win = Ti.App.win
@@ -29,7 +37,9 @@ login = ->
       }
     ]
   })
-  win.open()
+  win.open({
+    transition: Titanium.UI.iPhone && Titanium.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT
+  })
 
 
 Ti.Facebook.forceDialogAuth = true
