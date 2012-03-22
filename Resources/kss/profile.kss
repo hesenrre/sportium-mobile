@@ -1,0 +1,67 @@
+profile{
+	backgroundImage: image/idcard.jpg;
+}
+
+.logo{
+	top: 45;
+	width: 80%;
+	height: auto;
+}
+.avatar{
+	width: 90;
+	height: 70;
+	top: 135;
+	left: 25;
+	borderRadius: 10;
+}
+.name{
+	color: #000;
+	top: 135;
+	height: auto;
+	width: auto;
+	left: 40%;
+	fontSize: 20;
+}
+
+.enddatetxt{
+	height: auto;
+	width: auto;
+	top: 195;
+	left: 40%;
+	fontSize: 15;
+}
+
+.enddate{
+	height: auto;
+	width: auto;
+	top: 215;
+	left: 40%;
+	fontSize: 12;
+}
+
+
+.tastes{
+	top: 30;
+	left: 10%;
+	fontSize: 15;
+}
+
+.vtastes{
+	top: 270;
+	height: 50;
+	width: 80%;
+	borderRadius: 10;
+	backgroundColor: #000;
+}
+.achive{
+	top: 210;
+	left: 10%;
+	fontSize: 15;
+}
+.vachive{
+	top: 360;
+	height: 50;
+	width: 80%;
+	borderRadius: 10;
+	backgroundColor: #fff;
+}
