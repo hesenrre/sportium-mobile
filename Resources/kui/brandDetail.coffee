@@ -63,4 +63,42 @@ exports.Class = View.extend
     ]
   
     @_super.apply(@, arguments)
-    Ti.App.win.add mapview
+
+    contentURL = 'http://movies.apple.com/media/us/ipad/2010/tours/apple-ipad-video-us-20100127_r848-9cie.mov'
+    #contentURL = 'http://localhost:3000/sportium.mp4'
+    activeMovie = Ti.Media.createVideoPlayer({
+      url: contentURL
+      backgroundColor: '#111'
+      movieControlMode: Titanium.Media.VIDEO_CONTROL_DEFAULT
+      scalingMode:Titanium.Media.VIDEO_SCALING_MODE_FILL
+      top: 0
+      left: 0
+      width: '100%'
+      height: 220
+    })
+    
+
+    playingVideo = false
+    
+    showMap = ->  
+      activeMovie.pause() if playingVideo
+      Ti.App.win.remove activeMovie if playingVideo
+      Ti.App.win.add mapview
+      playingVideo = false
+    
+    activeMovie.addEventListener 'complete', showMap
+      
+    showVideo = ->
+      Ti.App.win.remove mapview unless playingVideo
+      Ti.App.win.add activeMovie
+      playingVideo = true
+      activeMovie.play()
+    
+    $('.activitiesImages').bind 'click', (event)->
+      if playingVideo
+        showMap()
+      else
+        showVideo()
+        
+    showMap()
+      
