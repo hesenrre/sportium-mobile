@@ -2,7 +2,7 @@ backendResponse = {
   todo: [
     {
       type:'abdominales'
-      desc:'20 minutos nado mariposa'
+      desc:'20mins nado mariposa'
       done: false
       anim: [
         'image/instruction/nado1.png',
@@ -17,7 +17,7 @@ backendResponse = {
     }
     {
       type:'pesas'
-      desc:'serie 4/15 con pesas 7.0kg'
+      desc:'serie 4/15 pesas 7.0kg'
       done: false
       anim: [
         'image/instruction/pesas1.png',
@@ -43,7 +43,7 @@ backendResponse = {
     }
     {
       type:'caminadora'
-      desc:'20 minutos caminadora nivel 8'
+      desc:'20min caminadora vel 8'
       done: false
     }
     {
@@ -58,7 +58,7 @@ backendResponse = {
     }
     {
       type:'pesas'
-      desc:'serie 4/15 con pesas 7.0kg'
+      desc:'serie 4/15 pesas 7.0kg'
       done: false
     }
   
@@ -92,12 +92,13 @@ exports.Class = View.extend
         rutina.addClass 'gray'
         rutina.find('.paloma').addClass 'palomeado'
         
-        last = views.splice(views.indexOf(tvr), 1)
-        views.push.apply views, last
-        
-        rutinaTable.setData views        
-        rutinaTable.deleteRow last[0]
-        rutinaTable.appendRow last[0]
+        rutinaTable.deleteRow tvr
+        rutinaTable.appendRow tvr
+        #last = views.splice(views.indexOf(tvr), 1)
+        #views.push.apply views, last
+                
+        #rutinaTable.deleteRow last[0]
+        #rutinaTable.appendRow last[0]
      
         
       rutina.find('.paloma').bind 'click', done

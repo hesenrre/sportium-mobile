@@ -25,6 +25,7 @@ exports.Class = View.extend
     
     @children = childs
     @_super.apply(@, arguments)
+    
+    if todo.anim
+      @el.getChildren()[1].start()
 
-    anim = $('.anim').get(0)
-    anim.start() if anim

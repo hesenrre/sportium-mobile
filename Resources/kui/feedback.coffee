@@ -27,7 +27,10 @@ exports.Class = View.extend
     })
     #$('.feedback').get(0).add options
     #$(options).addClass('options')
-    area = Ti.UI.createTextArea({width: '90%', height: 200, top: 60, left: 10, backgroundColor: '#cccccc', borderColor: 'black'})
-    $('.feedback').get(0).add area
+    area = Ti.UI.createTextArea({width: '90%', height: 200, top: 100, left: 15, opacity: 0.7, borderColor: 'black'})
+    @el.add area
     $(area).addClass('comments')
     
+  backgroundImage: "image/rutinasbg.jpg"
+  top: 0
+  height: "92%" 

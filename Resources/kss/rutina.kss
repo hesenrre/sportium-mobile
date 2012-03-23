@@ -84,8 +84,10 @@
 }
 
 .paloma{
+    borderWidth: 2;
+    borderRound: 2;
 	top: 10;
 	right: 10;
-	width: 25;
-	height: 25;
+	width: 24px;
+	height: 24px;
 }
