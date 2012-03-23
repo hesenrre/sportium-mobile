@@ -21,48 +21,56 @@ backendResponse = {
       {
         hora: '09:00',
         desc: 'SuperClase - Ballet',
+        longdesc: 'Superclase de 2 horas ',
         cupo: 8,
         cls: 'abdominales'
       },
       {
         hora: '10:00',
         desc: 'SuperClase - Danza Arabe',
+        longdesc: 'Superclase de 2 horas  de danza arabe',
         cupo: 5,
         cls: 'abdominales'
       },
       {
         hora: '11:00',
         desc: 'Cardio',
+        longdesc: 'Consurso de cardio',
         cupo: 8,
         cls: 'bici'
       },
       {
         hora: '13:00',
         desc: 'Natacion',
+        longdesc: 'Carrera acuática',
         cupo: 12,
         cls: 'caminadora'
       },
       {
         hora: '14:00',
         desc: 'Futbol',
+        longdesc: 'Torneo de futbol rápido',
         cupo: 8,
         cls: 'pesas'
       },
       {
         hora: '17:00',
         desc: 'Aerobics',
+        longdesc: 'Super clase de Aerobics gratis, trae a tus amigos',
         cupo: 12,
         cls: 'abdominales'
       },
       {
         hora: '19:00',
         desc: 'Tae Bo',
+        longdesc: 'Super clase de Tae Bo gratis, trae a tus amigos',
         cupo: 8,
         cls: 'pesas'
       },
       {
         hora: '19:30',
         desc: 'Spinning',
+        longdesc: 'Super clase de Spinning',
         cupo: 12,
         cls: 'bici'
       }
@@ -71,23 +79,26 @@ backendResponse = {
       {
         hora: '07:00',
         desc: 'Tae-bo',
+        longdesc: 'Clase muestra de Tae Bo',
         cupo: 10,
         cls: 'bici'
       },
       {
         hora: '20:00',
         desc: 'Football',
+        longdesc: 'Torneo de futbol',
         cupo: 22,
         cls: 'pesas'
       }
     ]
   }
 }
-
+eventWindow={};
 exports.Class = View.extend
 
   init: ->
     self = @
+    eventWin = Ti.App.win
     @children = [
       K.jade('events.jade', backendResponse)
     ]
@@ -105,6 +116,10 @@ exports.Class = View.extend
         $('.list').get(0).data = evs.map (ev)->
           tr = K.createTableViewRow({
             className: ev.cls,
+            events:{
+              click:(event) ->
+                  Ti.App.useWin('eventDetail', 'Detalle del evento', eventWin,{event:ev}) 
+            }  
             children: [
               { 
                 type: 'label',
