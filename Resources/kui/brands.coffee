@@ -13,7 +13,7 @@ sucursales = [
     ] 
   },
   { 
-    name:'Sportium Insurgentes Sur' , latitude:19.353583, longitude:-99.188347 ,
+    name:'San Angel' , latitude:19.353583, longitude:-99.188347 ,
     address:'Insurgentes Sur, Chimalistac, Álvaro Obregón, Ciudad de México, Distrito Federal', activities:[{cls:'caminadora' },{cls:'nado' }]
   },
   { 

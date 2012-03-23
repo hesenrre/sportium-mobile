@@ -49,8 +49,11 @@ Ti.App.backWin = ->
     Ti.App.win = prev
     Ti.App.win.add toolbar unless viewStack.length == 0
     Ti.App.win.show()
- 
-    
+
+Ti.App.showNotification = (title = 'Notification',image) ->
+  notification = K.createWindow( { title: title, hight:200})
+  $({type:'notification',image:image}).appendTo notification
+  notification.open({modal:true});  
 
 
 develop = false
