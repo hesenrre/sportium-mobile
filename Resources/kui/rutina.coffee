@@ -57,12 +57,13 @@ backendResponse = {
 }
 
 
+
 exports.Class = View.extend
 
   init: ->
 
     rutinaTable = null
-
+    longi = 0
     views = backendResponse.todo.map (todo)->
       tvr = K.createTableViewRow()
       tvr.todo = todo
@@ -71,8 +72,15 @@ exports.Class = View.extend
       rutina.todo = todo
       rutina.addClass todo.type + 'Rutina'
       rutina.find('.maquina').addClass todo.type + 'Maquina'
-      
-      done = (event)->
+     
+      done = (event)->  
+        Ti.API.info 'palomeados ='
+        Ti.API.info longi 
+        if longi == views.length - 1
+          Titanium.UI.createAlertDialog({
+                message: 'Congratulations !! youve winned the fitness badge'
+          }).show();   
+        longi = longi + 1   
         rutina.removeClass todo.type + 'Rutina'
         rutina.addClass 'gray'
         rutina.find('.paloma').addClass 'palomeado'
