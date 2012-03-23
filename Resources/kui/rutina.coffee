@@ -86,12 +86,13 @@ exports.Class = View.extend
         rutina.addClass 'gray'
         rutina.find('.paloma').addClass 'palomeado'
         
-        last = views.splice(views.indexOf(tvr), 1)
-        views.push.apply views, last
-        
-        rutinaTable.setData views        
-        rutinaTable.deleteRow last[0]
-        rutinaTable.appendRow last[0]
+        rutinaTable.deleteRow tvr
+        rutinaTable.appendRow tvr
+        #last = views.splice(views.indexOf(tvr), 1)
+        #views.push.apply views, last
+                
+        #rutinaTable.deleteRow last[0]
+        #rutinaTable.appendRow last[0]
      
         
       rutina.find('.paloma').bind 'click', done
