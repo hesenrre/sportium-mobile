@@ -21,10 +21,12 @@ exports.Class = View.extend
     })
     
     mapview = Titanium.Map.createView({
-      top: 0,
-      left: 0,
-      width: '100%',
+      top: 10,
+      left: "5%",
+      width: '90%',
       height: 220,
+      borderRadius: 10,
+      opacity: 0.5
       mapType: Titanium.Map.STANDARD_TYPE,
       region: {
         latitude:brand.latitude,
@@ -72,10 +74,11 @@ exports.Class = View.extend
       backgroundColor: '#111'
       movieControlMode: Titanium.Media.VIDEO_CONTROL_DEFAULT
       scalingMode:Titanium.Media.VIDEO_SCALING_MODE_FILL
-      top: 0
-      left: 0
-      width: '100%'
-      height: 220
+      top: 10,
+      left: "5%",
+      width: '90%',
+      height: 220,
+      borderRadius: 10
     })
     
 
@@ -84,6 +87,7 @@ exports.Class = View.extend
     showMap = ->  
       activeMovie.pause() if playingVideo
       Ti.App.win.remove activeMovie if playingVideo
+      Ti.App.win.setBackgroundImage "image/brandsbg.png"
       Ti.App.win.add mapview
       playingVideo = false
     
@@ -91,6 +95,7 @@ exports.Class = View.extend
       
     showVideo = ->
       Ti.App.win.remove mapview unless playingVideo
+      Ti.App.win.setBackgroundImage "image/brandsbg.png"
       Ti.App.win.add activeMovie
       playingVideo = true
       activeMovie.play()
