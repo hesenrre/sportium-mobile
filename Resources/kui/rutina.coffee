@@ -2,7 +2,7 @@ backendResponse = {
   todo: [
     {
       type:'abdominales'
-      desc:'20 minutos nado mariposa'
+      desc:'20mins nado mariposa'
       done: false
       anim: [
         'image/instruction/nado1.png',
@@ -17,7 +17,7 @@ backendResponse = {
     }
     {
       type:'pesas'
-      desc:'serie 4/15 con pesas 7.0kg'
+      desc:'serie 4/15 pesas 7.0kg'
       done: false
       anim: [
         'image/instruction/pesas1.png',
@@ -35,103 +35,31 @@ backendResponse = {
       type:'bici'
       desc:'15 minutos bicicleta'
       done: false
-      anim: [
-        'image/instruction/pesas1.png',
-        'image/instruction/pesas2.png',
-        'image/instruction/pesas3.png',
-        'image/instruction/pesas4.png'
-      ]
-      longdesc: '''
-      Asegurese de realizar los movimientos
-      de manera lenta y de utilizar la
-      respiracion correcta.
-      '''      
-
     }
     {
       type:'abdominales'
       desc:'serie 4/20 abdominales'
       done: false
-      anim: [
-        'image/instruction/pesas1.png',
-        'image/instruction/pesas2.png',
-        'image/instruction/pesas3.png',
-        'image/instruction/pesas4.png'
-      ]
-      longdesc: '''
-      Asegurese de realizar los movimientos
-      de manera lenta y de utilizar la
-      respiracion correcta.
-      '''      
-
     }
     {
       type:'caminadora'
-      desc:'20 minutos caminadora nivel 8'
+      desc:'20min caminadora vel 8'
       done: false
-      anim: [
-        'image/instruction/pesas1.png',
-        'image/instruction/pesas2.png',
-        'image/instruction/pesas3.png',
-        'image/instruction/pesas4.png'
-      ]
-      longdesc: '''
-      Asegurese de realizar los movimientos
-      de manera lenta y de utilizar la
-      respiracion correcta.
-      '''      
-
     }
     {
       type:'bici'
       desc:'15 minutos bicicleta'
       done: false
-      anim: [
-        'image/instruction/pesas1.png',
-        'image/instruction/pesas2.png',
-        'image/instruction/pesas3.png',
-        'image/instruction/pesas4.png'
-      ]
-      longdesc: '''
-      Asegurese de realizar los movimientos
-      de manera lenta y de utilizar la
-      respiracion correcta.
-      '''      
-
     }
     {
       type:'abdominales'
       desc:'serie 4/20 abdominales'
       done: false
-      anim: [
-        'image/instruction/pesas1.png',
-        'image/instruction/pesas2.png',
-        'image/instruction/pesas3.png',
-        'image/instruction/pesas4.png'
-      ]
-      longdesc: '''
-      Asegurese de realizar los movimientos
-      de manera lenta y de utilizar la
-      respiracion correcta.
-      '''      
-
     }
     {
       type:'pesas'
-      desc:'serie 4/15 con pesas 7.0kg'
+      desc:'serie 4/15 pesas 7.0kg'
       done: false
-      anim: [
-        'image/instruction/pesas1.png',
-        'image/instruction/pesas2.png',
-        'image/instruction/pesas3.png',
-        'image/instruction/pesas4.png'
-      ]
-      longdesc: '''
-      Asegurese de realizar los movimientos
-      de manera lenta y de utilizar la
-      respiracion correcta.
-      '''      
-
     }
   
   ]  
@@ -139,7 +67,7 @@ backendResponse = {
 
 
 exports.Class = View.extend
-
+ 
   init: ->
 
     rutinaTable = null
@@ -190,3 +118,7 @@ exports.Class = View.extend
     @_super.apply(@, arguments)
     
     rutinaTable = $('.rutinaTable').get(0)    
+
+   backgroundImage: "image/rutinasbg.jpg"
+   top: 0
+   height: "92%" 
