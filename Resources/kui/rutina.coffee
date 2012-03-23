@@ -10,8 +10,7 @@ backendResponse = {
         'image/instruction/nado3.png',
         'image/instruction/nado4.png'
       ]
-      longdesc: '''
-        El nado es un ejercicio completo.
+      longdesc: ''' El nado es un ejercicio completo.
         Realice 20 minutos de nado en mariposa.
         La animacion ejemplifica los movimientos
         principales de este ejercicio.
@@ -70,7 +69,8 @@ exports.Class = View.extend
       rutina.addClass todo.type + 'Rutina'
       rutina.find('.maquina').addClass todo.type + 'Maquina'
       
-      moveDown = (event)->
+      done = (event)->
+        Ti.API.info event.source
         rutina.find('.paloma').addClass 'palomeado'
         rutina.removeClass todo.type + 'Rutina'
         rutina.addClass 'gray'
@@ -78,12 +78,12 @@ exports.Class = View.extend
         $('.rutinaTable').get(0).deleteRow(tvr)
         $('.rutinaTable').get(0).appendRow(tvr)
         
-      
-      $(rutina.find('.paloma').get(0)).bind('click', moveDown)
-      rutina.bind('click', (event)->
-         Ti.App.useWin 'instruction', todo.desc, rutinaWin, todo: todo  
-      )
-      
+      info = -> 
+        Ti.App.useWin 'instruction', todo.desc, rutinaWin, todo: todo
+      rutina.find('.paloma').bind 'click', done
+      rutina.find('.maquina').bind 'click', info        
+      rutina.find('.desc').bind 'click', info
+               
       rutina.appendTo tvr
       tvr
 

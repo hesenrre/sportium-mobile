@@ -1,0 +1,24 @@
+.instruction {
+  background-color: #ffffff;
+}
+
+.desc {
+  top: 210;
+  left: 30;
+  width: auto;
+  height: auto;
+}
+
+.anim {
+  top: 30;
+  left: 80;
+  width: 150;
+  height: 150;
+}
+
+.longdesc {
+  top: 270;
+  left: 30;
+  width: auto;
+  height: auto;
+}
