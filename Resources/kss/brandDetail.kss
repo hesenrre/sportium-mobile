@@ -1,0 +1,28 @@
+.brandDetail{
+	width:100%;
+	height:50%;
+	top:220px;
+}
+
+.title{
+	bottom:180;
+	left:20;
+}
+
+.address{
+	bottom:120;
+	left:10;
+	font-size:xx-small;
+	width:300;
+	
+}
+.activitiesImages{
+	bottom:50;
+	width:100%;
+	height:100;
+	background-color: #orange;
+}
+.activityView{
+	width:50px;
+	height:50px;
+}

@@ -1,0 +1,11 @@
+.brands{
+	background-color: #FFF;
+	width:100%;
+	height:50%;
+	top:220px;
+}
+
+.title{
+	top:10;
+	left:50;`
+}
