@@ -1,3 +1,10 @@
+.rutinaTable{
+	width: 80%;
+	height: 77%;
+	backgroundColor: transparent;
+	borderRadius: 10;
+	opacity: 1.0; 
+}
 .rutina{
 	background-color: #FFF;
 	width:100%;
@@ -37,19 +44,23 @@
 }
 
 .abdominalesRutina {
-  background-color: #cfe2f3;
+  backgroundImage: image/rutinas/r2.jpg;
+  backgroundRepeat: true;
 }
 
 .biciRutina {
-  background-color: #d9ead3;
+  backgroundImage: image/rutinas/r3.jpg;
+  backgroundRepeat: true;
 }
 
 .caminadoraRutina {
-  background-color: #fce5cd;
+  backgroundImage: image/rutinas/r1.jpg;
+  backgroundRepeat: true;
 }
 
 .pesasRutina {
-  background-color: #fff2cc;
+  backgroundImage: image/rutinas/r4.jpg;
+  backgroundRepeat: true;
 }
 
 .gray {
@@ -57,7 +68,7 @@
 }
 
 .maquina{
-	top: 5;
+	top: 10;
 	left: 10;
 	width: 25;
 	height: 25;
@@ -66,12 +77,14 @@
 .desc{
 	height: auto;
 	width: auto;
-	top: 0;
+	bottom: 10;
 	left: 50;
+	fontFamily: Thonburi;
+	fontSize: 16;
 }
 
 .paloma{
-	top: 5;
+	top: 10;
 	right: 10;
 	width: 25;
 	height: 25;

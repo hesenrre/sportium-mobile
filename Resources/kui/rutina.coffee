@@ -67,7 +67,7 @@ backendResponse = {
 
 
 exports.Class = View.extend
-
+ 
   init: ->
 
     rutinaTable = null
@@ -118,3 +118,7 @@ exports.Class = View.extend
     @_super.apply(@, arguments)
     
     rutinaTable = $('.rutinaTable').get(0)    
+
+   backgroundImage: "image/rutinasbg.jpg"
+   top: 0
+   height: "92%" 

@@ -135,19 +135,18 @@ exports.Class = View.extend
             children: [
               { 
                 type: 'label',
+                className: 'evdesc'
                 text: ev.desc,
-                left: 50
               },
               {
                 type: 'label',
+                className: 'hora'
                 text: ev.hora,
-                left: 0 
               },
               {
                 type: 'imageview',
-                image: "image/activities/#{ev.cls}.png",
-                left: 300,
-                right: 5
+                className: 'evmaquina'
+                image: "image/activities/#{ev.cls}.png"
               }
             ]
           })

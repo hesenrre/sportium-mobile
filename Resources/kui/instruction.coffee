@@ -8,7 +8,7 @@ exports.Class = View.extend
     childs.push 
        type: 'label'
        text: todo.desc
-       className: 'desc'
+       className: 'instdesc'
       
     if todo.anim
       childs.push
