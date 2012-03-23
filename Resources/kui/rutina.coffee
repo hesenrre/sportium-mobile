@@ -62,8 +62,6 @@ exports.Class = View.extend
 
   init: ->
 
-    rutinaWin = Ti.App.win
-
     views = backendResponse.todo.map (todo)->
       tvr = K.createTableViewRow()
       rutina = J('rutina.jade', {  todo: todo })

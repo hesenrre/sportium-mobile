@@ -3,7 +3,6 @@ Ti.include '/kranium/lib/kranium.js'
 K.initBackbone()
 
 viewStack = [] 
-win = K.createWindow()
 flexSpace = K.createButton({
   systemButton: Titanium.UI.iPhone.SystemButton.FLEXIBLE_SPACE
 });
@@ -13,7 +12,7 @@ back = K.createButton({
 });
 
 back.addEventListener("click", () ->
-  Ti.App.viewManager.backToLastView()
+  Ti.App.backWin()
 );
 
 toolbar = K.createToolbar({
@@ -23,35 +22,32 @@ toolbar = K.createToolbar({
   borderBottom:false,
   translucent:true,
   barColor:'#999'
-
 })
 
-$({type: "main"}).appendTo win
-win.open()
+Ti.App.win = null
+Ti.App.facebookdata = {}
 
-Ti.App.viewManager = {
-   addView: (view) ->
-     if not win
-       win = K.createWindow()
-     viewStack.push view
-     Ti.API.log viewStack
-     $({type: view}).appendTo win
-     win.add toolbar
-     win.open() 
-   
-   backToLastView: ->
-     win.close()
-     win = K.createWindow()
-     viewStack.pop()
-     view = if viewStack.length > 1 then viewStack.pop() else "main"
-     $({type: view}).appendTo win
-     win.open()
-   
-   views: ->
-     Ti.API.log "calling viewStack"
-     viewStack
-}
+Ti.App.useWin = (type, title, prev = null, options = new Object())->
+  prev ||= Ti.App.win
+  if prev
+    viewStack.push prev 
+    prev.close()
+  options.type = type
+  Ti.App.win = K.createWindow title: title
+  view = $(options)
+  view.appendTo Ti.App.win
+  Ti.App.win.add toolbar if prev
+  Ti.App.win.open()
+  
+Ti.App.backWin = ->
+  prev = viewStack.pop()
+  if prev
+    Ti.App.win.close()
+    Ti.App.win = prev
+    Ti.App.win.open()
 
 
+main = ->
+  Ti.App.useWin 'main', 'Sportium'
 
-
+main()

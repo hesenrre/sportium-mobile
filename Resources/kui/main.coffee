@@ -3,14 +3,13 @@ exports.Class = View.extend
 
   init: ->
     @className ='mainwhole'
-    mainWin = Ti.App.win
     @children = [
       {
         type: 'button'
         className: 'asistenciaButton'
         events:{
           click:(event)->
-            Ti.App.viewManager.addView("codigoqr") 
+            Ti.App.useWin("codigoqr") 
         }  
       }
       {
@@ -18,7 +17,7 @@ exports.Class = View.extend
         className: 'rutinaButton'
         events:{
           click:(event)->
-            Ti.App.viewManager.addView("rutina") 
+            Ti.App.useWin("rutina") 
         } 
       }
       {
@@ -26,7 +25,7 @@ exports.Class = View.extend
         className: 'eventosButton'
         events:{
           click:(event)->
-            Ti.App.viewManager.addView("events")
+            Ti.App.useWin("events")
         } 
       }
       {
@@ -34,7 +33,7 @@ exports.Class = View.extend
         className: 'sucursalesButton'
         events:{
           click:(event)->
-            Ti.App.viewManager.addView("sucursales") 
+            Ti.App.useWin("sucursales") 
         } 
       }
       {
@@ -42,7 +41,7 @@ exports.Class = View.extend
         className: 'profileButton'
         events:{
           click:(event)->
-            Ti.App.viewManager.addView("profile") 
+            Ti.App.useWin("profile") 
         } 
       }
       {
@@ -50,7 +49,7 @@ exports.Class = View.extend
         className: 'feedbackButton'
         events:{
           click:(event)->
-            Ti.App.viewManager.addView("feedback") 
+            Ti.App.useWin("feedback") 
         } 
       }
     ]
