@@ -28,10 +28,10 @@ Ti.App.win = null
 Ti.App.facebookdata = {}
 
 Ti.App.useWin = (type, title, prev = null, options = new Object())->
-  prev ||= Ti.App.win
+  prev or= Ti.App.win
   if prev
     viewStack.push prev 
-    prev.close()
+    prev.hide()
   options.type = type
   Ti.App.win = K.createWindow title: title
   view = $(options)
@@ -44,7 +44,10 @@ Ti.App.backWin = ->
   if prev
     Ti.App.win.close()
     Ti.App.win = prev
-    Ti.App.win.open()
+    Ti.App.win.add toolbar unless viewStack.length == 0
+    Ti.App.win.show()
+ 
+    
 
 
 main = ->

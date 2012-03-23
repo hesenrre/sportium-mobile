@@ -1,4 +1,4 @@
-childs =  [ K.jade('codigoqr.jade',{nombreSocio:"Ti.App.facebookdata.name", numeroSocio:"Ti.App.facebookdata.id"}) ]
+childs =  [ K.jade('codigoqr.jade',{nombreSocio:Ti.App.facebookdata.name, numeroSocio:Ti.App.facebookdata.id}) ]
 
 exports.Class = View.extend
 

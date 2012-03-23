@@ -23,9 +23,8 @@ exports.Class = View.extend
          text: todo.longdesc
          className: 'longdesc'    
       
-    Ti.API.info childs
     @children = childs
     @_super.apply(@, arguments)
     
-    if todo.anim
+    if todo.anim     
       $('.anim').get(0).start()  

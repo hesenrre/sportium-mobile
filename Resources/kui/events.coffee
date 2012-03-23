@@ -100,20 +100,32 @@ exports.Class = View.extend
     self = @
     eventWin = Ti.App.win
     @children = [
-      K.jade('events.jade', backendResponse)
+      K.jade('events.jade', backendResponse),
+      {
+        type: 'scrollview', 
+        children: [ {
+          type: 'tableview'
+          className: 'list'
+        }], 
+        top: 50 + (24 * backendResponse.days.length)
+      }
     ]
-
+    
     @_super.apply(@, arguments)
-        
-    $('.days').bind 'click', (event)->
+    
+    tableview = $(@el).find('.list').get(0)
+    
+    $(@el).find('.days').bind 'click', (event)->
       idx = event.index
       row = event.source.row
       day = backendResponse.days[row][idx].toString()
       
-      $('.list').get(0).data = []
+      tableview.data = []
+      tableview.setData []
       evs = backendResponse.events[day]
+      
       if evs
-        $('.list').get(0).data = evs.map (ev)->
+        data = evs.map (ev)->
           tr = K.createTableViewRow({
             className: ev.cls,
             events:{
@@ -140,5 +152,7 @@ exports.Class = View.extend
             ]
           })
           tr
+        tableview.data = data
+        tableview.setData data
         
         

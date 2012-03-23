@@ -61,8 +61,11 @@ exports.Class = View.extend
 
   init: ->
 
+    rutinaTable = null
+
     views = backendResponse.todo.map (todo)->
       tvr = K.createTableViewRow()
+      tvr.todo = todo
       rutina = J('rutina.jade', {  todo: todo })
      
       rutina.todo = todo
@@ -70,17 +73,22 @@ exports.Class = View.extend
       rutina.find('.maquina').addClass todo.type + 'Maquina'
       
       done = (event)->
-        Ti.API.info event.source
-        rutina.find('.paloma').addClass 'palomeado'
         rutina.removeClass todo.type + 'Rutina'
         rutina.addClass 'gray'
+        rutina.find('.paloma').addClass 'palomeado'
+        
+        last = views.splice(views.indexOf(tvr), 1)
+        views.push.apply views, last
+        
+        rutinaTable.setData views        
+        rutinaTable.deleteRow last[0]
+        rutinaTable.appendRow last[0]
      
-        $('.rutinaTable').get(0).deleteRow(tvr)
-        $('.rutinaTable').get(0).appendRow(tvr)
+        
+      rutina.find('.paloma').bind 'click', done
         
       info = -> 
-        Ti.App.useWin 'instruction', todo.desc, rutinaWin, todo: todo
-      rutina.find('.paloma').bind 'click', done
+        Ti.App.useWin 'instruction', null, null, todo: todo
       rutina.find('.maquina').bind 'click', info        
       rutina.find('.desc').bind 'click', info
                
@@ -93,7 +101,11 @@ exports.Class = View.extend
       {
         type:'tableview'
         className: 'rutinaTable'
-        data: views        
+        data: views
+        init: ->
+          @_super.apply(@, arguments)
       }
     ]
-    @_super.apply(@, arguments)    
+    @_super.apply(@, arguments)
+    
+    rutinaTable = $('.rutinaTable').get(0)    
