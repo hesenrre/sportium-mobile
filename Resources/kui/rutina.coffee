@@ -86,7 +86,7 @@ exports.Class = View.extend
         Ti.API.info 'palomeados ='
         Ti.API.info longi 
         if longi == views.length - 1
-          Ti.App.showNotification 'Congratulations', 'logo.png'  
+          Ti.App.showNotification 'Haz ganado un Badge', 'badges/notification.png'  
         longi = longi + 1   
         rutina.removeClass todo.type + 'Rutina'
         rutina.addClass 'gray'

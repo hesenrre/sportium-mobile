@@ -52,7 +52,7 @@ Ti.App.backWin = ->
 
 Ti.App.showNotification = (title = 'Notification',image) ->
   notification = K.createWindow( { title: title, hight:200})
-  $({type:'notification',image:image}).appendTo notification
+  $({type:'notification',image:image,win:notification}).appendTo notification
   notification.open({modal:true});  
 
 

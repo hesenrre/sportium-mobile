@@ -1,6 +1,14 @@
 exports.Class = View.extend
-  init:(image) ->
+  init:(args) ->
     @children = [
-      {type:'imageview',image:'image/' +image}
+      {
+        type:'imageview',
+        image:'image/' +args.image,
+        classname:'notificationView',
+        events:{
+           click:(event) ->
+             args.win.close()
+        }
+      }
     ]
     @_super.apply(@, arguments)
