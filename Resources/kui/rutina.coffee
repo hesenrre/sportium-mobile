@@ -1,7 +1,7 @@
 backendResponse = {
   todo: [
     {
-      type:'nado'
+      type:'abdominales'
       desc:'20 minutos nado mariposa'
       done: false
       anim: [
@@ -10,12 +10,26 @@ backendResponse = {
         'image/instruction/nado3.png',
         'image/instruction/nado4.png'
       ]
-      longdesc: ''' El nado es un ejercicio completo.
+      longdesc: '''
         Realice 20 minutos de nado en mariposa.
-        La animacion ejemplifica los movimientos
-        principales de este ejercicio.
+        Si necesita ayuda consulte a su instructor.
+      ''' 
+    }
+    {
+      type:'pesas'
+      desc:'serie 4/15 con pesas 7.0kg'
+      done: false
+      anim: [
+        'image/instruction/pesas1.png',
+        'image/instruction/pesas2.png',
+        'image/instruction/pesas3.png',
+        'image/instruction/pesas4.png'
+      ]
+      longdesc: '''
+      Asegurese de realizar los movimientos
+      de manera lenta y de utilizar la
+      respiracion correcta.
       '''      
-      
     }
     {
       type:'bici'
@@ -25,11 +39,6 @@ backendResponse = {
     {
       type:'abdominales'
       desc:'serie 4/20 abdominales'
-      done: false
-    }
-    {
-      type:'pesas'
-      desc:'serie 4/15 con pesas 7.0kg'
       done: false
     }
     {

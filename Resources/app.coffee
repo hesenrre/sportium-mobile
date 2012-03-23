@@ -50,7 +50,48 @@ Ti.App.backWin = ->
     
 
 
-main = ->
-  Ti.App.useWin 'main', 'Sportium'
+develop = false
+Ti.Facebook.forceDialogAuth = true
+Ti.Facebook.appid = '278493245262'
+Ti.Facebook.permissions = ['publish_stream', 'publish_checkins']
+Ti.Facebook.addEventListener 'login', (event)->
+  if event.success 
+    main()
+    Ti.Facebook.requestWithGraphPath('me', {}, 'GET', (e) ->
+      if e.success
+        Ti.App.facebookdata = JSON.parse(e.result)      
+    )
+Ti.Facebook.addEventListener 'logout', (event)-> login()
 
-main()
+main = ->
+  if Ti.App.win
+    Ti.App.win.close()
+  Ti.App.win = null
+  Ti.App.useWin 'main', 'Sportium'
+  
+login = ->
+  Ti.App.win = K.createWindow({
+    fullscreen: true,
+    children: [
+      {
+        type: 'button',
+        backgroundImage: 'image/facebook.png',
+        events: {
+          click: (event)->
+            Ti.Facebook.authorize()
+        }
+      }
+    ]
+  })
+  Ti.App.win.open({
+    transition: Titanium.UI.iPhone && Titanium.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT
+  })
+
+
+run = ->
+  if develop || Ti.Facebook.loggedIn
+    main()
+  else
+    login() 
+
+run()

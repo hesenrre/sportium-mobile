@@ -61,6 +61,6 @@ exports.Class = View.extend
     ]
     
     $(".avatar").get(0).setImage "image/rms.jpg"
-    $(".logout").bind('click', () -> Ti.Facebook.logout())
+    $(".logout").bind('click', -> Ti.Facebook.logout())
     
     @_super.apply(@, arguments)
