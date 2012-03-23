@@ -1,62 +1,66 @@
 
 .mainwhole{
-	background-color: #FFF;
+	backgroundImage: image/main.png;
 	width:100%;
 	height:100%;
 }
 
 .asistenciaButton{
-	top:50px;
-	left:20%;
-	background-image:image/PALOMA.png;
-	width:40px;
-	height:40px;
-	
-	
-	
+	top:0;
+	left:0;
+	backgroundColor: transparent;
+	backgroundImage: trans.png;
+	width:140;
+	height:230;
+	zIndex: 10;
 }
 
 .rutinaButton{
-	top:50px;
-	right:30%;
-	background-image:image/sportiumChart.png;
-	width:50px;
-	height:50px;
-	
-	
+	top:79;
+	right:0;
+	backgroundColor: transparent;
+	backgroundImage: trans.png;
+	width:181;
+	height:128;
+	zIndex: 2;
 }
 
 .eventosButton{
-	top:150px;
-	left:20%;
-	background-image:image/PALOMA.png;
-	width:50px;
-	height:50px;
+	bottom:0;
+	left:0;
+	backgroundColor: transparent;
+	backgroundImage: trans.png;
+	width:170;
+	height:171;
+	zIndex: 5;
 }
-
-
 
 .sucursalesButton{
-	top:150px;
-	right:30%;
-	background-image:image/PALOMA.png;
-	width:50px;
-	height:50px;
+	top:206;
+	right:0;
+	backgroundColor: transparent;
+	backgroundImage: trans.png;
+	width:226;
+	height:100px;
+	zIndex: 1;
 }
+
 .profileButton{
-	top:300px;
-	left:20%;
-	background-image:image/sportiumChart.png;
-	width:50px;
-	height:50px;
-	
+	bottom:0;
+	right:0;
+	backgroundColor: transparent;
+	backgroundImage: trans.png;
+	width:200;
+	height:190;
+	zIndex: 2;	
 }
 
 .feedbackButton{
-	top:300px;
-	right:30%;
-	background-image:image/sportiumChart.png;
-	width:50px;
-	height:50px;
-	
+	bottom:160;
+	left:0;
+	backgroundColor: transparent;
+	backgroundImage: trans.png;
+	width:120;
+	height:100;
+	zIndex: 0;
 }

@@ -1,27 +1,36 @@
 .codigoqr{
-	background-color: #FFF;
-	width:100%;
-	height:100%;
+	backgroundColor: #000;
+	layout: vertical;
 }
 
 .qrcodeNombre{
-	top: 20;
+	top: 25;
 	height: auto;
-	width: 100%;
-	textAlign:center;	
+	width: auto;
+	textAlign:center;
+	fontSize: 22;
+	fontFamily: American Typewriter;
+	fontWeight: bold;
+	color: #fff; 
 }
 
 .qrcodeSocio{
-	bottom: 20;
+	top: 370;
 	height: auto;
 	width: 100%;
-	textAlign:center;	
+	textAlign:center;
+	fontFamily: American Typewriter;
+	fontWeight: bold;
+	fontSize: 20;
+	color: #fff;
 }
 
 .qrcodeImage{
-    image:image/sportiumChart.png;
+	top: 60;
+    image: image/sportiumChart.png;
     width: 300px;
-    height: 300px;	
-    
+    height: 300px;
+    borderColor: #ffffff;
+  	borderWidth:1;
 }
 	

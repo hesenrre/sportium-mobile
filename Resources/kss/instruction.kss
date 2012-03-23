@@ -1,24 +1,31 @@
 .instruction {
+  backgroundImage: image/rutinasbg.jpg;
   background-color: #ffffff;
+  layout: vertical;
 }
 
-.desc {
-  top: 210;
-  left: 30;
+.instdesc {
+  top: 50;
+  left: 50;
   width: auto;
   height: auto;
+  textAlign: center;
+  fontFamily: Thonburi;
+  fontSize: 20;
 }
 
 .anim {
-  top: 30;
-  left: 80;
+  top: 5;
+  left: 85;
   width: 150;
   height: 150;
 }
 
 .longdesc {
-  top: 270;
-  left: 30;
+  top: 20;
+  left: 50;
   width: auto;
   height: auto;
+  fontFamily: Thonburi;
+  fontSize: 14;
 }

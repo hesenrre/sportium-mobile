@@ -31,6 +31,7 @@ view {
 
 .days {
   style: Ti.UI.iPhone.SystemButtonStyle.BAR;
+  backgroundColor: #00467f;
   height: 25;
 }
 
@@ -42,18 +43,41 @@ view {
   height: 100%
 }
 
+.hora{
+  fontFamily: American Typewriter;
+  fontSize: 16;
+  left: 5;
+}
+
+.evdesc{
+  fontFamily: Thonburi;
+  fontSize: 16;
+  left: 60;
+}
+
+.evmaquina{
+	top: 10;
+	right: 10;
+	width: 25;
+	height: 25;
+}
+
 .abdominales {
-  background-color: #cfe2f3;
+  backgroundImage: image/rutinas/r2.jpg;
+  backgroundRepeat: true;
 }
 
 .bici {
-  background-color: #d9ead3;
+  backgroundImage: image/rutinas/r3.jpg;
+  backgroundRepeat: true;
 }
 
 .caminadora {
-  background-color: #fce5cd;
+  backgroundImage: image/rutinas/r1.jpg;
+  backgroundRepeat: true;
 }
 
 .pesas {
-  background-color: #fff2cc;
+  backgroundImage: image/rutinas/r4.jpg;
+  backgroundRepeat: true;
 }

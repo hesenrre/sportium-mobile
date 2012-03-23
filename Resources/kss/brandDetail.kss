@@ -7,20 +7,23 @@
 .title{
 	bottom:180;
 	left:20;
+	fontFamily: Thonburi;
+	fontSize: 20;
+	fontWeight: bold;
 }
 
 .address{
-	bottom:120;
-	left:10;
-	font-size:xx-small;
+	bottom:130;
+	left:20;
 	width:300;
-	
+	fontFamily: Thonburi;
+	fontSize: 12;
 }
 .activitiesImages{
-	bottom:50;
-	width:100%;
-	height:100;
-	background-color: #orange;
+	bottom:120;
+	width:90%;
+	height:auto;
+	background-color: transparent;
 }
 .activityView{
 	width:50px;

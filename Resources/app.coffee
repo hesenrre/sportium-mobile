@@ -33,7 +33,10 @@ Ti.App.useWin = (type, title, prev = null, options = new Object())->
     viewStack.push prev 
     prev.hide()
   options.type = type
-  Ti.App.win = K.createWindow title: title
+  Ti.App.win = K.createWindow({ 
+    title: title
+    fullscreen:true
+  }) 
   view = $(options)
   view.appendTo Ti.App.win
   Ti.App.win.add toolbar if prev
@@ -54,17 +57,25 @@ Ti.App.showNotification = (title = 'Notification',image) ->
 
 
 develop = false
+
+Ti.UI.addEventListener 'refreshData', (event) ->
+  Ti.API.log ">>>>>>>>>>cheching for Graph<<<<<<<<<<<<" 
+  Ti.Facebook.requestWithGraphPath('me', {}, 'GET', (e) ->
+      if e.success
+        Ti.App.facebookdata = JSON.parse(e.result)      
+  )
+  
 Ti.Facebook.forceDialogAuth = true
 Ti.Facebook.appid = '278493245262'
 Ti.Facebook.permissions = ['publish_stream', 'publish_checkins']
 Ti.Facebook.addEventListener 'login', (event)->
   if event.success 
     main()
-    Ti.Facebook.requestWithGraphPath('me', {}, 'GET', (e) ->
-      if e.success
-        Ti.App.facebookdata = JSON.parse(e.result)      
-    )
+    Ti.UI.fireEvent "refreshData"
+    
 Ti.Facebook.addEventListener 'logout', (event)-> login()
+
+
 
 main = ->
   if Ti.App.win
@@ -92,7 +103,9 @@ login = ->
 
 
 run = ->
+  Ti.API.log "develop flag>"+develop
   if develop || Ti.Facebook.loggedIn
+    Ti.UI.fireEvent "refreshData"
     main()
   else
     login() 

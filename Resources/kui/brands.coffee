@@ -40,10 +40,12 @@ annotations = sucursales.map (point) ->
 
 
 mapview = Titanium.Map.createView({
-    top: 0,
-    left: 0,
-    width: '100%',
+    top: 10,
+    left: "5%",
+    width: '90%',
     height: 220,
+    borderRadius: 10,
+    opacity: 0.5
     mapType: Titanium.Map.STANDARD_TYPE,
     region: {
       latitude:19.420000,
@@ -55,6 +57,7 @@ mapview = Titanium.Map.createView({
     regionFit:true,
     #userLocation:true,
     annotations:annotations
+    className: "map"
   });
   
 exports.Class = View.extend
@@ -62,22 +65,23 @@ exports.Class = View.extend
     @className = 'brands'
     brandWin = Ti.App.win
     
+    
     tableRows= sucursales.map (sucursal) ->
       tvr = K.createTableViewRow()
-      $({type:'label', text:sucursal.name}).appendTo tvr
+      $({type:'label', text:sucursal.name, className: "labelRow"}).appendTo tvr
       showDetail = (event)->
         Ti.API.info 'aqui'
         Ti.App.useWin('brandDetail', 'Detalle de la sucursal', brandWin,{ brand: sucursal }) 
       $(tvr).bind 'click', showDetail
       tvr
     @children = [ 
-      {type:'tableview',data:tableRows} 
+      {type:'tableview',data:tableRows, className: "mapTableView"} 
     ]
     
     
     @_super.apply(@, arguments)
     
-    
+    Ti.App.win.setBackgroundImage "image/brandsbg.png"
     Ti.App.win.add mapview
     
     
