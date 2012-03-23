@@ -1,0 +1,9 @@
+.notification{
+	height:50%;
+	background-color:red;
+	
+}
+
+.notificationView{
+	
+}

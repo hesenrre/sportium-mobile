@@ -86,9 +86,7 @@ exports.Class = View.extend
         Ti.API.info 'palomeados ='
         Ti.API.info longi 
         if longi == views.length - 1
-          Titanium.UI.createAlertDialog({
-                message: 'Congratulations !! youve winned the fitness badge'
-          }).show();   
+          Ti.App.showNotification 'Congratulations', 'logo.png'  
         longi = longi + 1   
         rutina.removeClass todo.type + 'Rutina'
         rutina.addClass 'gray'
