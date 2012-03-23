@@ -66,6 +66,7 @@ exports.Class = View.extend
 
     contentURL = 'http://movies.apple.com/media/us/ipad/2010/tours/apple-ipad-video-us-20100127_r848-9cie.mov'
     #contentURL = 'http://localhost:3000/sportium.mp4'
+    #contentURL = 'http://people.apache.org/~vborja/sportium.mov'
     activeMovie = Ti.Media.createVideoPlayer({
       url: contentURL
       backgroundColor: '#111'
