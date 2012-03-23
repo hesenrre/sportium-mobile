@@ -1,11 +1,12 @@
 .feedback {
-  background-color: #ffff
+  background-color: #fff
+
 }
 
 .title {
   width: auto;
   height: auto;
-  top: 10;
+  top: 50;
   left: 50;
 }
 
