@@ -30,7 +30,7 @@ exports.Class = View.extend
         type: 'button'
         className: 'sucursalesButton'
         events:{
-          click:(event)->Ti.App.useWin('sucursales', 'Sucursales', mainWin) 
+          click:(event)->Ti.App.useWin('brands', 'Sucursales', mainWin) 
         } 
       }
       {
