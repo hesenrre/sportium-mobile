@@ -1,0 +1,48 @@
+.anim {
+  backgroundColor: #fff;
+}
+
+.mainPort {
+  backgroundColor: green;
+  width: 200px;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.locationPort {
+  backgroundColor: yellow;
+  width: 200px;
+  height: 100%;
+  left: 200px;
+  top: 0;
+}
+
+.sportium {
+  font-size: 50px;
+  bottom: 20;
+  left: 50;
+  width: 300%;
+  height: auto;
+  zIndex: 1
+}
+
+.mapHere {
+  backgroundColor: red;
+  width: 90%;
+  height: 130px;
+  top: 10;
+  left: 15;
+}
+
+.locationsHere {
+  backgroundColor: blue;
+  width: 90%;
+  height: 50%;
+  top: 30%;
+}
+
+.locationItem {
+  width: auto;
+  height: auto;
+}
