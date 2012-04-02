@@ -185,12 +185,13 @@ exports.Class = View.extend
           complete() if last == 0             
         item.animate anim
        
-    moveMenuItemTitle = (port, selector, topOff = 10, leftOff = 5)->
+    moveMenuItemTitle = (port, selector, topOff = 10, leftOff = 5, opacity = 1)->
       item = self.find(selector).get(0)
       hideMenuItems(item) 
       pos = Ti.App.portPos port, opts
       moveTitle = Ti.UI.createAnimation
                    duration: 1000
+                   opacity: opacity
                    top: pos.top + topOff
                    left: pos.left + leftOff
                    transform: Ti.UI.create2DMatrix().scale(2.5)      
@@ -238,7 +239,7 @@ exports.Class = View.extend
     Ti.App.bindMove opts, portClubs, forwardToClubs, backFromClubs
       
 
-    forwardToEvents = -> moveMenuItemTitle(portEvents, '#eventos',250,40)
+    forwardToEvents = -> moveMenuItemTitle(portEvents, '#eventos',250,40, 0.1)
     backFromEvents = -> animateMenu()
     Ti.App.bindMove opts, portEvents, forwardToEvents, backFromEvents
       
