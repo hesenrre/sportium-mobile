@@ -216,6 +216,38 @@ definePort {
   type: 'profilePort'
 }
 
+
+definePort {
+  row: 1
+  col: 2
+  type: 'schedulePort'
+}
+
+definePort {
+  row: 1
+  col: 3
+  type: 'schedulePort2'
+}
+
+definePort {
+  row: 3
+  col: 2
+  type: 'eventsPort'
+}
+
+
+definePort {
+  row: 0
+  col: 2
+  type: 'brandsPort'
+}
+
+definePort {
+  row: 0
+  col: 3
+  type: 'brandsPort2'
+}
+
 # START
 moveViewForward({row: 2, col: 2}, false)
 win.add main

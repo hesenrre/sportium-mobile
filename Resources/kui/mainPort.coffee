@@ -233,12 +233,12 @@ exports.Class = View.extend
     backFromCheckin = -> animateMenu()
     Ti.App.bindMove opts, portCheckin, forwardToCheckin, backFromCheckin
       
-    forwardToClubs = -> moveMenuItemTitle(portClubs, '#sucursales')
+    forwardToClubs = -> moveMenuItemTitle(portClubs, '#sucursales',370,20)
     backFromClubs = -> animateMenu()
     Ti.App.bindMove opts, portClubs, forwardToClubs, backFromClubs
       
 
-    forwardToEvents = -> moveMenuItemTitle(portEvents, '#eventos')
+    forwardToEvents = -> moveMenuItemTitle(portEvents, '#eventos',250,40)
     backFromEvents = -> animateMenu()
     Ti.App.bindMove opts, portEvents, forwardToEvents, backFromEvents
       
